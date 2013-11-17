@@ -12,6 +12,7 @@
 <title>Index</title>
 </head>
 
+
 <body>
 	<% response.sendRedirect("listaArticulos.jsf"); %>
 </body>

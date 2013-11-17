@@ -23,7 +23,7 @@ public class Articulo implements AbstractEntity {
 	
 	private String nombre;
 	
-	private String description;
+	private String descripcion;
 	
 	private Integer cantidad;
 	
@@ -45,12 +45,15 @@ public class Articulo implements AbstractEntity {
 		this.nombre = nombre;
 	}
 
-	public String getDescription() {
-		return description;
+
+	
+	
+	public String getDescripcion() {
+		return descripcion;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
 
 	public Integer getCantidad() {
