@@ -32,7 +32,7 @@ public class ArticuloMB implements Serializable {
 	
 	private Long idSelecionado;
 	
-	private List<Articulo> mercaderias;
+	private List<Articulo> mercadorias;
 	
 	public ArticuloMB() {
 		
@@ -61,10 +61,10 @@ public class ArticuloMB implements Serializable {
 	
 	public List<Articulo> getMercadorias() {
 		System.out.println("service: "+service);
-		if (mercaderias == null) {
-			mercaderias = service.findAll();
+		if (mercadorias == null) {
+			mercadorias = service.findAll();
 		}
-		return mercaderias;
+		return mercadorias;
 	}
 
 	
