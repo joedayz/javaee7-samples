@@ -1,0 +1,301 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>pe.joedayz.javaee7</groupId>
+  <artifactId>padre</artifactId>
+  <version>1.0</version>
+  <packaging>pom</packaging>
+  <name>Ejemplos de JAVAEE7</name>
+  
+  <modules>
+  	<module>cdi</module>
+  </modules>
+    
+  
+   <properties>
+    <version.java>1.7</version.java>
+    <!-- Java EE -->
+    <version.glassfish>4.0</version.glassfish>
+    <version.javaee>7.0</version.javaee>
+    <version.weld>2.0.1.Final</version.weld>
+    <version.jersey>2.3.1</version.jersey>
+    <version.eclipselink>2.5.1</version.eclipselink>
+    <version.hibernate.validator>5.0.1.Final</version.hibernate.validator>
+    <version.el>3.0.0</version.el>
+    <version.json>1.0.2</version.json>
+    <!-- Databases -->
+    <version.derby>10.10.1.1</version.derby>
+    <version.mysql>5.1.21</version.mysql>
+    <!-- Test -->
+    <skipTests>false</skipTests>
+    <skipITs>${skipTests}</skipITs>
+    <skipUTs>${skipTests}</skipUTs>
+    <version.junit>4.11</version.junit>
+    <version.xmlunit>1.4</version.xmlunit>
+    <version.mockito>1.9.5</version.mockito>
+    <!-- Maven Plugins -->
+    <version.maven.jar.plugin>2.4</version.maven.jar.plugin>
+    <version.maven.war.plugin>2.4</version.maven.war.plugin>
+    <version.maven.processor.plugin>2.2.4</version.maven.processor.plugin>
+    <version.maven.compiler.plugin>3.1</version.maven.compiler.plugin>
+    <version.maven.dependency.plugin>2.8</version.maven.dependency.plugin>
+    <version.maven.help.plugin>2.2</version.maven.help.plugin>
+    <version.maven.exec.plugin>1.2.1</version.maven.exec.plugin>
+    <version.maven.jaxws.plugin>2.2</version.maven.jaxws.plugin>
+    <version.maven.surefire.plugin>2.16</version.maven.surefire.plugin>
+    <version.maven.failsafe.plugin>2.16</version.maven.failsafe.plugin>
+    <!-- Project -->
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <!-- This has most of the needed dependencies : Derby, JPA, EJB, Java EE 6... -->
+      <dependency>
+        <groupId>org.glassfish.main.extras</groupId>
+        <artifactId>glassfish-embedded-all</artifactId>
+        <version>${version.glassfish}</version>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>javax</groupId>
+        <artifactId>javaee-api</artifactId>
+        <version>${version.javaee}</version>
+        <scope>provided</scope>
+      </dependency>
+
+      <!-- CDI -->
+      <dependency>
+        <groupId>org.jboss.weld.se</groupId>
+        <artifactId>weld-se</artifactId>
+        <version>${version.weld}</version>
+      </dependency>
+
+      <!-- Bean Validation -->
+      <dependency>
+        <groupId>org.hibernate</groupId>
+        <artifactId>hibernate-validator</artifactId>
+        <version>${version.hibernate.validator}</version>
+      </dependency>
+
+      <!-- EL -->
+      <dependency>
+        <groupId>org.glassfish</groupId>
+        <artifactId>javax.el</artifactId>
+        <version>${version.el}</version>
+      </dependency>
+
+      <!-- JPA -->
+      <dependency>
+        <groupId>org.eclipse.persistence</groupId>
+        <artifactId>org.eclipse.persistence.jpa</artifactId>
+        <version>${version.eclipselink}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.persistence</groupId>
+        <artifactId>org.eclipse.persistence.jpa.modelgen.processor</artifactId>
+        <version>${version.eclipselink}</version>
+      </dependency>
+
+      <!-- Derby -->
+      <dependency>
+        <groupId>org.apache.derby</groupId>
+        <artifactId>derby</artifactId>
+        <version>${version.derby}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.derby</groupId>
+        <artifactId>derbyclient</artifactId>
+        <version>${version.derby}</version>
+      </dependency>
+
+      <!-- MySQL -->
+      <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>${version.mysql}</version>
+      </dependency>
+
+      <!-- JSOn-P -->
+      <dependency>
+        <groupId>org.glassfish</groupId>
+        <artifactId>javax.json</artifactId>
+        <version>${version.json}</version>
+      </dependency>
+
+      <!-- Jersey -->
+      <dependency>
+        <groupId>org.glassfish.jersey.core</groupId>
+        <artifactId>jersey-common</artifactId>
+        <version>${version.jersey}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.glassfish.jersey.core</groupId>
+        <artifactId>jersey-server</artifactId>
+        <version>${version.jersey}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.glassfish.jersey.core</groupId>
+        <artifactId>jersey-client</artifactId>
+        <version>${version.jersey}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.glassfish.jersey.containers</groupId>
+        <artifactId>jersey-container-grizzly2-http</artifactId>
+        <version>${version.jersey}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.glassfish.jersey.containers</groupId>
+        <artifactId>jersey-container-jdk-http</artifactId>
+        <version>${version.jersey}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.glassfish.jersey.containers</groupId>
+        <artifactId>jersey-container-servlet</artifactId>
+        <version>${version.jersey}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.glassfish.jersey.containers</groupId>
+        <artifactId>jersey-container-servlet-core</artifactId>
+        <version>${version.jersey}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.eclipse.persistence</groupId>
+        <artifactId>org.eclipse.persistence.moxy</artifactId>
+        <version>2.4.1</version>
+      </dependency>
+
+      <!-- Test -->
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>${version.junit}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>xmlunit</groupId>
+        <artifactId>xmlunit</artifactId>
+        <version>${version.xmlunit}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.mockito</groupId>
+        <artifactId>mockito-all</artifactId>
+        <version>${version.mockito}</version>
+        <scope>test</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>${version.maven.surefire.plugin}</version>
+        <configuration>
+          <skipTests>${skipUTs}</skipTests>
+          <argLine>-Duser.language=en -Duser.country=EN</argLine>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-failsafe-plugin</artifactId>
+        <version>${version.maven.failsafe.plugin}</version>
+        <configuration>
+          <skipTests>${skipTests}</skipTests>
+          <skipITs>${skipITs}</skipITs>
+          <argLine>-Duser.language=en -Duser.country=EN</argLine>
+        </configuration>
+        <executions>
+          <execution>
+            <id>integration-test</id>
+            <goals>
+              <goal>integration-test</goal>
+              <goal>verify</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+
+    <pluginManagement>
+      <plugins>
+        <!-- Apache -->
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-help-plugin</artifactId>
+          <version>${version.maven.help.plugin}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>${version.maven.compiler.plugin}</version>
+          <inherited>true</inherited>
+          <configuration>
+            <source>${version.java}</source>
+            <target>${version.java}</target>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-war-plugin</artifactId>
+          <version>${version.maven.war.plugin}</version>
+          <configuration>
+            <failOnMissingWebXml>false</failOnMissingWebXml>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>${version.maven.jar.plugin}</version>
+        </plugin>
+
+        <!-- Codehaus -->
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>exec-maven-plugin</artifactId>
+          <version>${version.maven.exec.plugin}</version>
+          <executions>
+            <execution>
+              <goals>
+                <goal>java</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+
+        <!-- JVNet -->
+        <plugin>
+          <groupId>org.jvnet.jax-ws-commons</groupId>
+          <artifactId>jaxws-maven-plugin</artifactId>
+          <version>${version.maven.jaxws.plugin}</version>
+        </plugin>
+
+        <plugin>
+          <groupId>org.bsc.maven</groupId>
+          <artifactId>maven-processor-plugin</artifactId>
+          <version>${version.maven.processor.plugin}</version>
+          <executions>
+            <execution>
+              <id>process</id>
+              <goals>
+                <goal>process</goal>
+              </goals>
+              <phase>generate-sources</phase>
+              <configuration>
+                <processors>
+                  <processor>org.eclipse.persistence.internal.jpa.modelgen.CanonicalModelProcessor</processor>
+                </processors>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
+
+      </plugins>
+    </pluginManagement>
+  </build>
+
+</project>
