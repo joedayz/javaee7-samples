@@ -8,6 +8,8 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+
+
 public class Generadornumero04Test {
 
 	protected static Weld weld;
@@ -19,11 +21,6 @@ public class Generadornumero04Test {
 		container = weld.initialize();
 	}
 
-	@AfterClass
-	public static void close() {
-		weld.shutdown();
-	}
-
 	@Test
 	public void deberiaChequearQueNumeroEsDeTreceDigitos() {
 		LibroService04 libroService = container.instance()
@@ -32,5 +29,13 @@ public class Generadornumero04Test {
 				"Geeky scifi Book");
 		assertTrue(libro.getIsbn().startsWith("13"));
 	}
+	
+	
+	@AfterClass
+	public static void close() {
+		weld.shutdown();
+	}
+
+
 
 }

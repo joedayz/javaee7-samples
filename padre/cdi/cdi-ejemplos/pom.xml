@@ -8,6 +8,7 @@
 	<name>CDI ejemplos</name>
 
 
+
 	<parent>
 		<groupId>pe.joedayz.javaee7</groupId>
 		<artifactId>cdi</artifactId>
