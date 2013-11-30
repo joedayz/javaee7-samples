@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 
 @Interceptor
 @Loggable33
-@Priority(Interceptor.Priority.PLATFORM_BEFORE)
+@Priority(200)
 public class LoggingInterceptor33 {
 
   // ======================================

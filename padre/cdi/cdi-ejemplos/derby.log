@@ -1,6 +1,6 @@
 ----------------------------------------------------------------
-Fri Nov 29 20:42:32 PET 2013:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance a816c00e-0142-a6ab-e3d6-0000001d5ed8 
+Sat Nov 30 17:41:48 PET 2013:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.1.1 - (1458268): instance a816c00e-0142-ab2c-c878-000000201bb0 
 on database directory memory:/Users/josediaz/Downloads/curso-javee7/javaee7-samples/padre/cdi/cdi-ejemplos/cdiDB with class loader sun.misc.Launcher$AppClassLoader@19e142a5 
 Loaded from file:/Users/josediaz/.m2/repository/org/apache/derby/derby/10.10.1.1/derby-10.10.1.1.jar
 java.vendor=Oracle Corporation

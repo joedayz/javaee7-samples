@@ -11,9 +11,11 @@ public class Main {
     Weld weld = new Weld();
     WeldContainer container = weld.initialize();
 
-    LibroService bookService = container.instance().select(LibroService.class).get();
+    LibroService bookService = container.instance().
+    			select(LibroService.class).get();
 
-    Libro book = bookService.createBook("H2G2", 12.5f, "Geeky scifi Book");
+    Libro book = bookService.createBook("H2G2", 12.5f, 
+    		"Geeky scifi Book");
 
     System.out.println(book);
 

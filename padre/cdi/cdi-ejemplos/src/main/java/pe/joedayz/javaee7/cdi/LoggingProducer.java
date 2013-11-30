@@ -8,6 +8,7 @@ public class LoggingProducer {
 
   @Produces
   private Logger createLogger(InjectionPoint injectionPoint) {
-    return Logger.getLogger(injectionPoint.getMember().getDeclaringClass().getName());
+    return Logger.getLogger(injectionPoint.getMember().
+    				getDeclaringClass().getName());
   }
 }

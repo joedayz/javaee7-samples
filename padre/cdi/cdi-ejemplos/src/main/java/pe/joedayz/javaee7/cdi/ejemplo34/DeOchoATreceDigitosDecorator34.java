@@ -7,7 +7,8 @@ import javax.inject.Inject;
 
 
 @Decorator
-public class DeOchoATreceDigitosDecorator34 implements GeneradorNumero34 {
+public class DeOchoATreceDigitosDecorator34 
+		implements GeneradorNumero34 {
 
   // ======================================
   // =             Attributes             =
