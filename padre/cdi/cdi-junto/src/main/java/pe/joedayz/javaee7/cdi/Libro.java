@@ -1,7 +1,7 @@
-package pe.joedayz.javaee7.cdi.ejemplo36;
+package pe.joedayz.javaee7.cdi;
 
 
-public class Libro36 {
+public class Libro {
 
   // ======================================
   // =             Attributes             =
@@ -10,16 +10,16 @@ public class Libro36 {
   private String title;
   private Float price;
   private String description;
-  private String isbn;
+  private String number;
 
   // ======================================
   // =            Constructors            =
   // ======================================
 
-  public Libro36() {
+  public Libro() {
   }
 
-  public Libro36(String title, Float price, String description) {
+  public Libro(String title, Float price, String description) {
     this.title = title;
     this.price = price;
     this.description = description;
@@ -53,12 +53,12 @@ public class Libro36 {
     this.description = description;
   }
 
-  public String getIsbn() {
-    return isbn;
+  public String getNumber() {
+    return number;
   }
 
-  public void setIsbn(String isbn) {
-    this.isbn = isbn;
+  public void setNumber(String number) {
+    this.number = number;
   }
 
   // ======================================
@@ -68,12 +68,12 @@ public class Libro36 {
   @Override
   public String toString() {
     final StringBuilder sb = new StringBuilder();
-    sb.append("Book02");
-    sb.append(", title='").append(title).append('\'');
+    sb.append("Book{");
+    sb.append("title='").append(title).append('\'');
     sb.append(", price=").append(price);
     sb.append(", description='").append(description).append('\'');
-    sb.append(", isbn='").append(isbn).append('\'');
-    sb.append('}');
+    sb.append(", number='").append(number).append('\'');
+     sb.append('}');
     return sb.toString();
   }
 }
