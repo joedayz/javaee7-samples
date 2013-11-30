@@ -14,5 +14,6 @@
 
 	<modules>
 		<module>cdi-ejemplos</module>
+		<module>cdi-junto</module>
 	</modules>
 </project>

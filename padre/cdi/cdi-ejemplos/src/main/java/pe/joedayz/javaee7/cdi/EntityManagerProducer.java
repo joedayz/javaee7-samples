@@ -14,7 +14,7 @@ public class EntityManagerProducer {
   // =             Attributes             =
   // ======================================
 
-  private EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("chapter02PU");
+  private EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("cdiPU");
 
   // ======================================
   // =           Public Methods           =

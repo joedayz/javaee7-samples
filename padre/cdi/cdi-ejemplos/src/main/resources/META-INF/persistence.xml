@@ -6,7 +6,13 @@
 
   <persistence-unit name="cdiPU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
-
+    
+    <class>pe.joedayz.javaee7.cdi.ejemplo23.Customer23</class>
+    <class>pe.joedayz.javaee7.cdi.ejemplo25.Customer25</class>
+    <class>pe.joedayz.javaee7.cdi.ejemplo27.Customer27</class>
+    <class>pe.joedayz.javaee7.cdi.ejemplo28.Customer28</class>
+    <class>pe.joedayz.javaee7.cdi.ejemplo29.Customer29</class>
+    <class>pe.joedayz.javaee7.cdi.ejemplo33.Customer33</class>
     <properties>
       <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
       <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver"/>
