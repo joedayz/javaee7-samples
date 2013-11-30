@@ -5,13 +5,7 @@ import javax.decorator.Decorator;
 import javax.decorator.Delegate;
 import javax.inject.Inject;
 
-/**
- * @author Antonio Goncalves
- *         APress Book - Beginning Java EE 7 with Glassfish 4
- *         http://www.apress.com/
- *         http://www.antoniogoncalves.org
- *         --
- */
+
 @Decorator
 public class DeOchoATreceDigitosDecorator34 implements GeneradorNumero34 {
 
