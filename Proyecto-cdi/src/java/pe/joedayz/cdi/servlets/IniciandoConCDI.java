@@ -35,18 +35,18 @@ public class IniciandoConCDI extends HttpServlet {
     public void ok() {
         System.out.println("Servlet listo.");
     }
-    
-    	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		double salarioBase = Double.parseDouble(req.getParameter("salario"));
-		
-		
-		System.out.println("Efectuando un cálculo.");
-		
-		//a calculadora de IR usa outra classe para calcular o salário
-		double impuesto =  3500;//calculadoraImpostos.calculaImpostoDeRenda(funcionario);
-		
-		res.getOutputStream().print(String.format("Salario base: R$ %.2f\n" +
-				"Impuesto adeudado: R$ %.2f", salarioBase, impuesto));
-		System.out.println("Fin.");
-	}
+
+    protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+        double salarioBase = 5000;
+
+        System.out.println("Efectuando un cálculo.");
+
+        //a calculadora de IR usa outra classe para calcular o salário
+        double impuesto = calculadoraImpostos.
+                calcularImpuestoALaRenta("Juan Perez");
+
+        res.getOutputStream().print(String.format("Salario base: R$ %.2f\n"
+                + "Impuesto adeudado: R$ %.2f", salarioBase, impuesto));
+        System.out.println("Fin.");
+    }
 }

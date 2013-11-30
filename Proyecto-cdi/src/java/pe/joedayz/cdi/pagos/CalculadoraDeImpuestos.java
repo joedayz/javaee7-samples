@@ -18,4 +18,8 @@ public class CalculadoraDeImpuestos {
 	public void init(){
 		System.out.println("Calculadora de impuestos listo!");
 	}
+        
+        public double calcularImpuestoALaRenta(String funcionario){
+            return 300;
+        }
 }
