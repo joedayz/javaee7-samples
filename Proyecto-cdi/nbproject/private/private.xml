@@ -3,7 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/josediaz/NetBeansProjects/Proyecto-cdi/src/java/pe/joedayz/cdi/servlets/IniciandoConCDI.java</file>
+            <file>file:/Users/josediaz/Downloads/curso-javee7/javaee7-samples/Proyecto-cdi/src/java/pe/joedayz/cdi/controllers/CalculadoraImpuestosBean.java</file>
+            <file>file:/Users/josediaz/Downloads/curso-javee7/javaee7-samples/Proyecto-cdi/src/java/pe/joedayz/cdi/servlets/CalculadoraSalario.java</file>
+            <file>file:/Users/josediaz/Downloads/curso-javee7/javaee7-samples/Proyecto-cdi/src/java/pe/joedayz/cdi/productor/Productor.java</file>
+            <file>file:/Users/josediaz/Downloads/curso-javee7/javaee7-samples/Proyecto-cdi/web/WEB-INF/web.xml</file>
+            <file>file:/Users/josediaz/Downloads/curso-javee7/javaee7-samples/Proyecto-cdi/web/calcular-impuestos.xhtml</file>
         </group>
     </open-files>
 </project-private>

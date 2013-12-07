@@ -14,18 +14,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import pe.joedayz.cdi.pagos.CalculadoraDeImpuestos;
+import pe.joedayz.cdi.pagos.Funcionario;
+import pe.joedayz.cdi.pagos.FuncionarioBuilder;
 
 /**
  *
  * @author josediaz
  */
-@WebServlet("/hello-cdi")
+@WebServlet("/hola-cdi")
 public class IniciandoConCDI extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
     @Inject
-    private CalculadoraDeImpuestos calculadoraImpostos;
+    private CalculadoraDeImpuestos calculadoraImpuestos;
 
     public IniciandoConCDI() {
         System.out.println("Instanciando a Servlet...");
@@ -37,16 +39,22 @@ public class IniciandoConCDI extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        double salarioBase = 5000;
 
-        System.out.println("Efectuando un cálculo.");
+        double salarioBase = 50000.00;//Double.parseDouble(req.getParameter("salario"));
 
-        //a calculadora de IR usa outra classe para calcular o salário
-        double impuesto = calculadoraImpostos.
-                calcularImpuestoALaRenta("Juan Perez");
+        Funcionario funcionario = new FuncionarioBuilder().conSalarioBaseDe(salarioBase)
+                .build();
 
-        res.getOutputStream().print(String.format("Salario base: R$ %.2f\n"
-                + "Impuesto adeudado: R$ %.2f", salarioBase, impuesto));
+        System.out.println("Efectuando el calculo");
+
+        //La calculadora de IR usa otra clase para calcular el salario
+        double impuesto
+                = calculadoraImpuestos.calcularImpuestoALaRenta(funcionario);
+
+        res.getOutputStream().print(
+                String.format("Salario base: R$ %.2f\n"
+                        + "Impuesto de: R$ %.2f", salarioBase, impuesto));
         System.out.println("Fin.");
+
     }
 }
