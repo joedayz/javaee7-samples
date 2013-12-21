@@ -28,7 +28,9 @@ public class TarjetaValidator {
 	  // ======================================
 
 	  @AssertTrue
-	  public Boolean validate(@NotNull @Valid TarjetaCredito tarjetaCredito) {
+	  public Boolean validate(
+			  	@NotNull 
+			  	@Valid TarjetaCredito tarjetaCredito) {
 
 	    String ultimoDigito = validationAlgorithm.validate(tarjetaCredito.getNumero(),
 	    		tarjetaCredito.getNumeroControl());
@@ -41,7 +43,9 @@ public class TarjetaValidator {
 	  }
 
 	  @AssertTrue
-	  public Boolean validate(@NotNull String numero, @Future Date fechaExpiracion,
+	  public Boolean validate(@NotNull 
+			  String numero, @Future 
+			  Date fechaExpiracion,
 			  @NotNull Integer numeroControl, String tipo) {
 
 	    String ultimoDigito = validationAlgorithm.validate(numero, 

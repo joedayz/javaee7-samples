@@ -44,9 +44,12 @@ public class LibroTest {
 	  @Test
 	  public void shouldRaiseNoConstraintViolation() {
 
-	    Libro01 book = new Libro01("H2G2", 12.5f, "Best IT Scifi Book", "1234-4566-9876", 247, false);
+	    Libro01 book = new Libro01("H2G2", 12.5f, 
+	    		"Best IT Scifi Book", "1234-4566-9876", 
+	    		247, false);
 
-	    Set<ConstraintViolation<Libro01>> violations = validator.validate(book);
+	    Set<ConstraintViolation<Libro01>> violations = 
+	    		validator.validate(book);
 	    assertEquals(0, violations.size());
 	  }
 

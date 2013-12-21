@@ -47,7 +47,8 @@ public class ItemTest {
 	  public void shouldRaiseNoConstraintViolation() {
 
 	    // Creates a book
-	    Item book = new Item("H2G2", 12.5f, "Best IT Scifi Book");
+	    Item book = new Item("H2G2", 12.5f, 
+	    		"Best IT Scifi Book");
 
 	    // Validate the cd
 	    Set<ConstraintViolation<Item>> violations = validator.validate(book);

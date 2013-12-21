@@ -45,11 +45,14 @@ public class ClienteTest {
 	  public void shouldRaiseNoConstraintViolation() {
 
 	    // Creates a book
-	    Cliente customer = new Cliente("John", "Smith", "jsmith@gmail.com", "recovery@gmail.com", "1234565", new Date(), new Date());
+	    Cliente customer = new Cliente("John", "Smith",
+	    		"jsmith@gmail.com", "recovery@gmail.com", 
+	    		"1234565", new Date(), new Date());
 
 
-	    // Validate the cd
-	    Set<ConstraintViolation<Cliente>> violations = validator.validate(customer);
+	    // Validate the customer
+	    Set<ConstraintViolation<Cliente>> violations = 
+	    		validator.validate(customer);
 	    assertEquals(0, violations.size());
 	  }
 
