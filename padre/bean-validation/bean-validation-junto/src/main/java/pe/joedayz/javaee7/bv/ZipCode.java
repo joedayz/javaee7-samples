@@ -14,7 +14,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Retention(RUNTIME)
 public @interface ZipCode {
 
-  String message() default "{pe.joedayz.book.javaee7.chapter03.ZipCode.message}";
+  String message() default "{pe.joedayz.book.javaee7.bv.ZipCode.message}";
 
   Class<?>[] groups() default {};
 
