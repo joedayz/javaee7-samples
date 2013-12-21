@@ -26,7 +26,8 @@ public class EntityManagerProducer {
     return em;
   }
 
-  private void closeEntityManager(@Disposes EntityManager entityManager) {
+  private void closeEntityManager(@Disposes 
+		  	EntityManager entityManager) {
     if (entityManager.isOpen()) {
       entityManager.close();
     }
