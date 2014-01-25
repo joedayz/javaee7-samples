@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            elementFormDefault="qualified"
+            xmlns="http://example.nl/hellopersonservice/1.0"
+            targetNamespace="http://example.nl/hellopersonservice/1.0">
+    <xsd:element name="HelloPersonServiceRequest" type="HelloPersonServiceRequestType"/>
+    <xsd:element name="HelloPersonServiceResponse" type="HelloPersonServiceResponseType"/>
+ 
+    <xsd:complexType name="HelloPersonServiceRequestType">
+        <xsd:element name="Person" type="PersonType"/>
+    </xsd:complexType>
+     
+    <xsd:complexType name="HelloPersonServiceResponseType">
+        <xsd:element name="Greetings" type="xsd:string"/>
+    </xsd:complexType>
+ 
+    <xsd:complexType name="PersonType">
+        <xsd:sequence>
+            <xsd:element name="FirstName" type="xsd:string"/>
+            <xsd:element name="LastName" type="xsd:string"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>
