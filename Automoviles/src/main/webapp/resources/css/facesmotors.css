@@ -1,0 +1,22 @@
+.automovil-grid td {
+	vertical-align:top;
+	
+}
+
+.precio-automovil {
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.label {
+	font-weight: bold;
+	text-align: right;
+}
+
+.table-linea-par {
+	background-color: #FFFFFF;
+}
+
+.table-linea-impar {
+	background-color: #CCCCCC;
+}
