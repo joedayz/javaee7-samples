@@ -10,6 +10,11 @@ public class ComponentesBean {
 	
 	private Integer[] programaciones;
 	
+	public void registrar(){
+		
+	}
+	
+	
 	public String getEquipoFavorito() {
 		return equipoFavorito;
 	}

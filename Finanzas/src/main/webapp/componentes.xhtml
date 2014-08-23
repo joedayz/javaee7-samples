@@ -103,6 +103,46 @@
 			<f:selectItem itemValue="5" itemLabel="SCALA"/>
 		</h:selectManyCheckbox>
 
+		<br/>
+		<h:selectOneListbox size="5" value="#{miCiudadBean.ciudadNatal}">
+			<f:selectItems value="#{miCiudadBean.todasCiudades}"/>
+		</h:selectOneListbox>
+
+		<br/>
+		
+
+		<h:commandButton id="registrar" value="Registrar" type="submit" 
+			action="#{componentesBean.registrar}"/>
+			
+		<br/>
+		<h:commandButton id="limpiar" value="Limpiar" type="reset" />
+		
+		<br/>
+		<h:commandButton id="imprimir" value="Imprimir" 
+			image="/resources/imagenes/printer.png" action="hola"/>
+
+		<br/>
+		<h:commandLink id="registrarLink" value="Registrar link" 
+			action="#{componentesBean.registrar}"/>
+
+		<br/>
+		<h:commandLink id="imprimirLink" action="hola">
+			<h:graphicImage value="/resources/imagenes/printer.png"/>
+			<h:outputText value="Imprimir"/>
+		</h:commandLink>
+		
+				<br/>
+		<h:outputLink value="http://academias.joedayz.pe" target="_blank">
+			<h:graphicImage library="imagenes" name="joedayz-academy.gif" />
+		</h:outputLink>	
+		<br/>
+			
+		<h:outputLink value="http://academias.joedayz.pe" target="_blank">
+			<f:param name="codigo" value="123"/>
+			<f:param name="alumno" value="Juan Perez"/>
+			<h:graphicImage library="imagenes" name="joedayz-academy.gif" />
+		</h:outputLink>	
+		
 	</h:form>
 </h:body>
 
