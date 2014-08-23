@@ -7,9 +7,9 @@
 </h:head>
 <h:body>
 	<h:form id="frm">
-		<h:messages />
+		<h:messages showDetail="true" showSummary="false"/>
 		
-		<h:inputText size="12" value="#{calculadoraBean.fechaBase}">
+		<h:inputText size="12" value="#{calculadoraBean.fechaBase}" label="Fecha Base">
 			<f:convertDateTime pattern="dd/MM/yyyy"/>
 		</h:inputText>
 		+
@@ -25,11 +25,11 @@
 		
 		<br/>
 		
-		<h:inputText size="12" value="#{calculadoraBean.valorA}" >
+		<h:inputText size="12" value="#{calculadoraBean.valorA}" required="true" >
 			<f:convertNumber minFractionDigits="2" maxFractionDigits="2" locale="en_US"/>
 		</h:inputText>
 		 +
-		<h:inputText size="12" value="#{calculadoraBean.valorB}" >
+		<h:inputText size="12" value="#{calculadoraBean.valorB}"  required="true">
 		<f:convertNumber minFractionDigits="2" maxFractionDigits="2" locale="en_US"/>
 		</h:inputText>
 		 =
@@ -38,6 +38,16 @@
 		</h:outputText>
 		<br />
 		<h:commandButton value="Sumar" action="#{calculadoraBean.sumar}" />
+		
+		<br/>
+		
+		<h:outputText value="Su nombre" for=""/>
+		<h:inputText size="12" value="#{calculadoraBean.nombre}" id="suNombre" 
+				label="Su nombre" required="true">
+			<f:validateLength minimum="3" maximum="15"/>		
+		</h:inputText>
+		
+		
 	</h:form>
 </h:body>
 </html>

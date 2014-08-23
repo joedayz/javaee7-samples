@@ -16,6 +16,8 @@ public class CalculadoraBean {
 	private Integer dias;
 	private Date fechaResultado;
 	
+	private String nombre;
+	
 	public void agregar(){
 		Calendar fechaCalculo = Calendar.getInstance();
 		fechaCalculo.setTime(this.fechaBase);
@@ -85,6 +87,14 @@ public class CalculadoraBean {
 
 	public void setFechaResultado(Date fechaResultado) {
 		this.fechaResultado = fechaResultado;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 	
 	
