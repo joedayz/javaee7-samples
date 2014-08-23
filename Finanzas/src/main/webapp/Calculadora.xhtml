@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+	<title>Calculadora</title>
+</h:head>
+<h:body>
+	<h:form id="frm">
+		<h:messages />
+		
+		<h:inputText size="12" value="#{calculadoraBean.fechaBase}">
+			<f:convertDateTime pattern="dd/MM/yyyy"/>
+		</h:inputText>
+		+
+		<h:inputText size="12" value="#{calculadoraBean.dias}" />
+		dias =
+		
+		<h:outputText value="#{calculadoraBean.fechaResultado}" >
+			<f:convertDateTime dataStyle="full" locale="en_US"/>
+		</h:outputText>
+		<br/>
+		<h:commandButton value="Agregar" action="#{calculadoraBean.agregar}"/>
+		
+		
+		<br/>
+		
+		<h:inputText size="12" value="#{calculadoraBean.valorA}" >
+			<f:convertNumber minFractionDigits="2" maxFractionDigits="2" locale="en_US"/>
+		</h:inputText>
+		 +
+		<h:inputText size="12" value="#{calculadoraBean.valorB}" >
+		<f:convertNumber minFractionDigits="2" maxFractionDigits="2" locale="en_US"/>
+		</h:inputText>
+		 =
+		<h:outputText value="#{calculadoraBean.resultado}" >
+		<f:convertNumber type="currency" locale="en_US"/>
+		</h:outputText>
+		<br />
+		<h:commandButton value="Sumar" action="#{calculadoraBean.sumar}" />
+	</h:form>
+</h:body>
+</html>

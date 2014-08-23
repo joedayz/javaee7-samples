@@ -11,4 +11,10 @@
 		<managed-bean-scope>view</managed-bean-scope>
 	</managed-bean> -->
 
+	<application>
+		<message-bundle>
+			com.mycompany.finanzas.resources.Messages
+		</message-bundle>
+	</application>
+
 </faces-config>
