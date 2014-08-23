@@ -11,7 +11,7 @@ header {
 	padding: 5px;
 	margin-bottom: 20px;
 	height: 30px;
-	background-color: #FFFFFF;
+	background-color: #545454;
 	color: #fff;
 	box-shadow: 0px 2px 2px #ccc
 }
@@ -28,5 +28,9 @@ footer {
 }
 
 h1 {
-
+	font-size: 24px;
+	font-weight: 500;
+	padding: 0px;
+	margin: 0px;
+	margin-bottom: 10px
 }
