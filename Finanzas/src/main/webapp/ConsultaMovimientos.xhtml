@@ -7,6 +7,7 @@
 
 <h:head>
 	<title>Consulta Movimientos</title>
+	<h:outputStylesheet library="css" name="estilo.css" />
 </h:head>
 
 <h:body>
@@ -14,48 +15,65 @@
 		<f:viewAction action="#{consultaMovimientosBean.consultar}" />
 	</f:metadata>
 
-	<h1>Consulta Movimientos</h1>
+	<header>
+		<h:graphicImage library="imagenes" name="joedayz-academy.gif" />
+	</header>
 
-	<h:form id="frm">
-		<h:dataTable value="#{consultaMovimientosBean.movimientos}"
-			var="movimiento">
-			<h:column>
-				<f:facet name="header">
-					<h:outputText value="Persona" />
-				</f:facet>
-			</h:column>
-			<h:column>
-				<f:facet name="header">
-					<h:outputText value="Descripcion" />
-				</f:facet>
-			</h:column>
-			<h:column>
-				<f:facet name="header">
-					<h:outputText value="Tipo" />
-				</f:facet>
-			</h:column>
+	<div id="contenido">
+		<h1>Consulta Movimientos</h1>
 
-			<h:column>
-				<f:facet name="header">
-					<h:outputText value="Valor" />
-				</f:facet>
-			</h:column>
+		<h:form id="frm">
+			<h:dataTable value="#{consultaMovimientosBean.movimientos}"
+				var="movimiento">
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Persona" />
+					</f:facet>
+					<h:outputText value="#{movimiento.persona.nombre}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Descripcion" />
+					</f:facet>
+					<h:outputText value="#{movimiento.descripcion}" />
+				</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Tipo" />
+					</f:facet>
+					<h:outputText value="#{movimiento.tipo}" />
+				</h:column>
 
-			<h:column>
-				<f:facet name="header">
-					<h:outputText value="Fecha de Vencimiento" />
-				</f:facet>
-			</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Valor" />
+					</f:facet>
+					<h:outputText value="#{movimiento.valor}" />
+				</h:column>
 
-			<h:column>
-				<f:facet name="header">
-					<h:outputText value="Fecha de Pago" />
-				</f:facet>
-			</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Fecha de Vencimiento" />
+					</f:facet>
+					<h:outputText value="#{movimiento.fechaVencimiento}" />
+				</h:column>
 
-		</h:dataTable>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Fecha de Pago" />
+					</f:facet>
+					<h:outputText value="#{movimiento.fechaPago}" />
+				</h:column>
 
-	</h:form>
+			</h:dataTable>
+
+		</h:form>
+	</div>
+	
+	<footer>
+		Sistema Financiero
+	</footer>
+	
 </h:body>
 
 </html>

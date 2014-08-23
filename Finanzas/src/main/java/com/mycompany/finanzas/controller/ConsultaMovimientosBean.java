@@ -5,9 +5,9 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.persistence.EntityManager;
-import javax.persistence.TypedQuery;
 
 import com.mycompany.finanzas.modelo.Movimiento;
+import com.mycompany.finanzas.repository.MovimientosRepository;
 import com.mycompany.finanzas.util.JpaUtil;
 
 
@@ -19,8 +19,11 @@ public class ConsultaMovimientosBean {
  	
  	public void consultar(){
  		EntityManager manager = JpaUtil.getEntityManager();
- 		TypedQuery<Movimiento> query = manager.createQuery("from Movimiento", Movimiento.class);
- 		this.movimientos = query.getResultList();
+ 		
+ 		MovimientosRepository movimientoRepository = new MovimientosRepository(manager);
+ 		this.movimientos = movimientoRepository.todos();
+ 		
+ 		manager.close();
  	}
 
 	public List<Movimiento> getMovimientos() {
