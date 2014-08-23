@@ -35,7 +35,7 @@ public class SmartFechaConverter implements Converter {
 			Calendar amanha = getFechaActual();
 			amanha.add(Calendar.DAY_OF_MONTH, 1);
 			fechaConvertida = amanha.getTime();
-		} else if ("anteayer".equalsIgnoreCase(value)) {
+		} else if ("ayer".equalsIgnoreCase(value)) {
 			Calendar ontem = getFechaActual();
 			ontem.add(Calendar.DAY_OF_MONTH, -1);
 			fechaConvertida = ontem.getTime();

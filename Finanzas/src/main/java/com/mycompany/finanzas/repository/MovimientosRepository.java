@@ -23,5 +23,8 @@ public class MovimientosRepository {
  		return query.getResultList();
 	}
 
+	public void agregar(Movimiento movimiento){
+		this.manager.persist(movimiento);
+	}
 	
 }

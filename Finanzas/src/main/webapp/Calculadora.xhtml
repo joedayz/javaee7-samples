@@ -9,8 +9,9 @@
 	<h:form id="frm">
 		<h:messages showDetail="true" showSummary="false"/>
 		
-		<h:inputText size="12" value="#{calculadoraBean.fechaBase}" label="Fecha Base">
-			<f:convertDateTime pattern="dd/MM/yyyy"/>
+		<h:inputText size="12" value="#{calculadoraBean.fechaBase}" label="Fecha Base" 
+		converter="smartDate">
+			<f:validator validatorId="diaUtil"/>
 		</h:inputText>
 		+
 		<h:inputText size="12" value="#{calculadoraBean.dias}" />
@@ -47,6 +48,10 @@
 				validatorMessage="Ingrese de 3 a 15 caracteres">
 			<f:validateLength minimum="3" maximum="15"/>		
 		</h:inputText>
+		
+		<br/>
+		
+	
 		
 		
 	</h:form>
