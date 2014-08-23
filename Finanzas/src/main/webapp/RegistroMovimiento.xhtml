@@ -32,7 +32,7 @@
 					label="Persona">
 					<f:selectItem itemLabel="Seleccione" noSelectionOption="true" />
 					<f:selectItems value="#{registroMovimientoBean.todasPersonas}"
-						var="persona" itemValue="#{persona}" itemLabel="#{persona.nome}" />
+						var="persona" itemValue="#{persona}" itemLabel="#{persona.nombre}" />
 				</h:selectOneMenu>
 
 				<h:outputLabel value="Descripcion" />
@@ -51,15 +51,13 @@
 
 				<h:outputLabel value="Fecha de Vencimiento" />
 				<h:inputText size="12"
-					value="#{registroMovimientoBean.movimiento
-                        .fechaVencimiento}"
+					value="#{registroMovimientoBean.movimiento.fechaVencimiento}"
 					label="Fecha de vencimiento">
 					<f:convertDateTime pattern="dd/MM/yyyy" timeZone="America/Lima" />
 				</h:inputText>
 				<h:outputLabel value="Fecha de pago" />
 				<h:inputText size="12"
-					value="#{registroMovimientoBean.movimiento
-                        .fechaPago}"
+					value="#{registroMovimientoBean.movimiento.fechaPago}"
 					label="Fecha de pago">
 					<f:convertDateTime pattern="dd/MM/yyyy" timeZone="America/Lima" />
 				</h:inputText>

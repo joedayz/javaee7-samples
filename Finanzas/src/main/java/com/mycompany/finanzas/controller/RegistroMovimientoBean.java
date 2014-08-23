@@ -13,6 +13,7 @@ import javax.persistence.EntityTransaction;
 import com.mycompany.finanzas.exception.NegocioException;
 import com.mycompany.finanzas.modelo.Movimiento;
 import com.mycompany.finanzas.modelo.Persona;
+import com.mycompany.finanzas.modelo.TipoMovimiento;
 import com.mycompany.finanzas.repository.MovimientosRepository;
 import com.mycompany.finanzas.repository.PersonaRepository;
 import com.mycompany.finanzas.service.RegistroMovimientos;
@@ -89,7 +90,8 @@ public class RegistroMovimientoBean implements Serializable{
 	
 	
 	
-	
+	public TipoMovimiento[] getTiposMovimientos() { return TipoMovimiento.values();
+	}
 	
 	
 	
