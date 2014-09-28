@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<ui:composition template="/WEB-INF/template/Layout.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+
+	<f:metadata>
+		<f:viewAction action="#{consultaMovimientosBean.consultar}" />
+	</f:metadata>
+
+	<ui:define name="titulo">Consulta de Movimientos</ui:define>
+
+	<ui:define name="cuerpo">
+		<h1>Consulta de Movimientos</h1>
+
+		<h:form id="form">
+			<p:messages showDetail="false" showSummary="true" autoUpdate="true"/>
+			<p:dataTable value="#{consultaMovimientosBean.movimientos}"
+				var="movimiento" border="1" cellpadding="0" cellspacing="2" 
+				paginator="true" rows="5" paginatorPosition="bottom">
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Persona" />
+					</f:facet>
+					<h:outputText value="#{movimiento.persona.nombre}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Descripcion" />
+					</f:facet>
+					<h:outputText value="#{movimiento.descripcion}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Tipo" />
+					</f:facet>
+					<h:outputText value="#{movimiento.tipo}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Valor" />
+					</f:facet>
+					<h:outputText value="#{movimiento.valor}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Fecha de Vencimiento" />
+					</f:facet>
+					<h:outputText value="#{movimiento.fechaVencimiento}" />
+				</p:column>
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Fecha de Pago" />
+					</f:facet>
+					<h:outputText value="#{movimiento.fechaPago}" />
+				</p:column>
+				<p:column>
+					<p:button icon="ui-icon-pencil" title="Editar" 
+					outcome="/RegistroMovimientos">
+						<f:param name="id" value="#{movimiento.id}"/>
+					</p:button>
+					
+					<p:commandButton icon="ui-icon-trash" title="Eliminar" process="@this" 
+					  update="@form" action="#{consultaMovimientosBean.eliminar}">
+					  <f:setPropertyActionListener value="#{movimiento}" 
+					  target="#{consultaMovimientosBean.movimientoSeleccionado}"/> 
+					 </p:commandButton>
+				</p:column>
+
+			</p:dataTable>
+
+		</h:form>
+	</ui:define>
+
+
+
+</ui:composition>

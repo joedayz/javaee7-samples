@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:composite="http://xmlns.jcp.org/jsf/composite">
+
+<h:head>
+	<title>Propiedades comunes</title>
+
+
+	<style>
+.campo {
+	background-color: #ccc;
+	color: white;
+}
+</style>
+</h:head>
+
+<h:body>
+
+	<h:form id="form">
+		<h:inputText onclick="this.value = '';"
+			onchange="this.value = this.value.toUpperCase();"
+			onmouseover="this.style.backgroundColor = 'yellow';"
+			onmouseout="this.style.backgroundColor = 'white';" />
+		<br />
+		<h:inputSecret value="3413242" />
+		<br />
+		<h:inputTextarea cols="40" rows="3" value="hola a todos" />
+		<br />
+		<h:outputText value="Bienvenido" style="font-weight: bold" />
+		<br />
+		<h:outputFormat value=" Hola {0} existen {1} usuarios">
+			<f:param value="Jose" />
+			<f:param value="5" />
+		</h:outputFormat>
+		<br />
+		<h:outputLabel value="Nombre:" for="nombreInput" />
+		<h:inputText id="nombreInput" />
+		<br />
+
+		<h:graphicImage library="imagenes" name="joedayz-academy.gif" />
+		<br />
+
+		<h:outputLabel value="Equipo favorito" for="equipos" />
+		<h:selectOneMenu value="#{componentesBean.equipoFavorito}"
+			id="equipos">
+			<f:selectItem itemValue="AL" itemLabel="ALIANZA LIMA" />
+			<f:selectItem itemValue="REAL MADRID" />
+			<f:selectItem itemValue="BARCELONA" />
+			<f:selectItem itemValue="CHELSEA" />
+			<f:selectItem itemValue="BAYERN" />
+		</h:selectOneMenu>
+		<br />
+		<h:outputLabel value="Mis Equipos favorito" for="favoritos" />
+		<h:selectManyMenu value="#{componentesBean.equiposFavoritos}"
+			id="favorito">
+			<f:selectItem itemValue="AL" itemLabel="ALIANZA LIMA" />
+			<f:selectItem itemValue="REAL MADRID" />
+			<f:selectItem itemValue="BARCELONA" />
+			<f:selectItem itemValue="CHELSEA" />
+			<f:selectItem itemValue="BAYERN" />
+
+		</h:selectManyMenu>
+
+
+		<br />
+		
+		<h:outputLabel value="Equipo favorito" for="equipos2"/>
+		<h:selectOneListbox value="#{componentesBean.equipoFavorito}" id="equipos2" size="4">
+					<f:selectItem itemValue="AL" itemLabel="ALIANZA LIMA" />
+			<f:selectItem itemValue="REAL MADRID" />
+			<f:selectItem itemValue="BARCELONA" />
+			<f:selectItem itemValue="CHELSEA" />
+			<f:selectItem itemValue="BAYERN" />
+		</h:selectOneListbox>
+		<br/>
+		<h:outputLabel value="Equipo favorito" for="favoritos2"/>
+		<h:selectManyListbox value="#{componentesBean.equiposFavoritos}" id="favoritos2" size="4">
+					<f:selectItem itemValue="AL" itemLabel="ALIANZA LIMA" />
+			<f:selectItem itemValue="REAL MADRID" />
+			<f:selectItem itemValue="BARCELONA" />
+			<f:selectItem itemValue="CHELSEA" />
+			<f:selectItem itemValue="BAYERN" />
+		
+		</h:selectManyListbox>
+
+		<br/>
+		<h:selectOneRadio id="sexo" layout="pageDirection">
+			<f:selectItem itemValue="M" itemLabel="Mascullino"/>
+			<f:selectItem itemValue="F" itemLabel="Femenino"/>
+		</h:selectOneRadio>
+		<br/>
+		<h:selectBooleanCheckbox id="aceptar"/>
+		<h:outputLabel value="Acepta el contrato"/>
+		<br/>
+		<h:selectManyCheckbox id="programacion" value="#{componentesBean.programaciones}" layout="pageDirection"> 
+			<f:selectItem itemValue="1" itemLabel="Java"/>
+			<f:selectItem itemValue="2" itemLabel="NET"/>
+			<f:selectItem itemValue="3" itemLabel="RUBY"/>
+			<f:selectItem itemValue="4" itemLabel="PYTHON"/>
+			<f:selectItem itemValue="5" itemLabel="SCALA"/>
+		</h:selectManyCheckbox>
+
+		<br/>
+		
+		<h:selectOneListbox size="5" value="#{miCiudadBean.ciudadNatal}">
+			<f:selectItems value="#{miCiudadBean.todasCiudades}"/>
+		</h:selectOneListbox>
+
+		<br/>
+		<h:commandButton id="registrar" value="Registrar" type="submit" 
+			action="#{componentesBean.registrar}"/>
+			
+		<br/>
+		<h:commandButton id="limpiar" value="Limpiar" type="reset" />
+		
+		<br/>
+		<h:commandButton id="imprimir" value="Imprimir" 
+			image="/resources/imagenes/printer.png" action="hola"/>
+
+		<br/>
+		<h:commandLink id="registrarLink" value="Registrar link" 
+			action="#{componentesBean.registrar}"/>
+
+		<br/>
+		<h:commandLink id="imprimirLink" action="hola">
+			<h:graphicImage value="/resources/imagenes/printer.png"/>
+			<h:outputText value="Imprimir"/>
+		</h:commandLink>
+		
+		<br/>
+		<h:outputLink value="http://academias.joedayz.pe" target="_blank">
+			<h:graphicImage library="imagenes" name="joedayz-academy.gif" />
+		</h:outputLink>	
+		<br/>
+			
+		<h:outputLink value="http://academias.joedayz.pe" target="_blank">
+			<f:param name="codigo" value="123"/>
+			<f:param name="alumno" value="Juan Perez"/>
+			<h:graphicImage library="imagenes" name="joedayz-academy.gif" />
+		</h:outputLink>	
+	</h:form>
+</h:body>
+
+
+</html>

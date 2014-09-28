@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html" 
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title><ui:insert name="titulo">Sistema Ventas</ui:insert></title>
+	<h:outputStylesheet library="css" name="estilo.css" />
+</h:head>
+
+<h:body>
+
+	<header>
+		<h:graphicImage library="imagenes" name="joedayz-academy.gif" />
+		
+		<div syle="float: right; margin-right: 20px; margin-top: 8px">
+			Hola #{usuario.nombre}
+		</div>
+		
+	</header>
+	
+	<p:ajaxStatus styleClass="ajax-status">
+		<f:facet name="start">
+			<h:graphicImage library="imagenes" name="loading.gif"/>
+		</f:facet>
+		<f:facet name="complete">
+			<h:outputText value=""/>
+		</f:facet>
+	</p:ajaxStatus>
+	
+	<h:form>
+		<p:menubar style="margin-top: -20px; margint-bottom: 20px">
+			<p:submenu label="Registros">
+				<p:menuitem value="Persona"/>
+				<p:menuitem value="Movimiento" action="/RegistroMovimientos?faces-redirect=true"/>
+			</p:submenu>
+
+			<p:submenu label="Consultas">
+				<p:menuitem value="Personas"/>
+				<p:menuitem value="Movimientos" action="/ConsultaMovimientos?faces-redirect=true"/>
+			</p:submenu>
+			<p:submenu label="Sistema">
+				<p:menuitem value="Salir" action="#{loginBean.logout}"/>
+				
+			</p:submenu>			
+		</p:menubar>
+	</h:form>
+
+	<div id="contenido">
+			<ui:insert name="cuerpo"/>
+	</div>
+	
+	<footer>
+		Sistema Ventas - JoeDayz
+	</footer>
+	
+</h:body>
+
+</html>
